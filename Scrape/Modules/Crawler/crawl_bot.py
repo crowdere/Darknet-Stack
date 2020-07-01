@@ -87,9 +87,9 @@ class Crawl_bot:
         for url in links:
             if (url in Crawl_bot.queue) or (url in Crawl_bot.data_crawled):
                 continue
-            if Crawl_bot.domain_name != get_domain_name(url):
-                print("Stay on the page!")
-                continue
+            #if Crawl_bot.domain_name != get_domain_name(url):
+            #    print("Stay on the page!")
+            #    continue
             Crawl_bot.queue.add(url)
         
 

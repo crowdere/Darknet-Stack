@@ -25,7 +25,7 @@ def ExecuteScraper(url):
     print (execute)
     os.system(execute)
 
-#MultiPrcessing Implementation (Limit - 5 processes at a time)
+#MultiProcessing Implementation (Limit - 5 processes at a time)
 def Multiprocessing(task):
     if (os.path.exists("Output")):
         delete = str('rm -r Output')

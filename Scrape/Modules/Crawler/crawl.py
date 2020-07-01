@@ -32,7 +32,7 @@ FOLDER_NAME = str(os.path.abspath("") + '/new/Crawled-'+ regex)
 print (FOLDER_NAME)
 data_crawled = FOLDER_NAME + '/crawled.txt'
 data_in_queue = FOLDER_NAME + '/queue.txt'
-thread_count =10
+thread_count = 5
 queue = Queue()
 
 Crawl_bot(FOLDER_NAME, BASE_URL, GET_DOMAIN)
