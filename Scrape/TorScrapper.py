@@ -16,7 +16,7 @@ with open("onions.txt", "r") as onion:
 
 #Terminal Process for Crawler
 def ExecuteCrawler(url):
-    execute = str(' python3 /Users/laptop/Documents/capstone/Scrape/Modules/Crawler/crawl.py ' + url)
+    execute = str(' python3 /home/ubuntu/Darknet-Stack/Scrape/Modules/Crawler/crawl.py ' + url)
     os.system(execute)
 
 #Terminal Process for Scraper 
@@ -40,8 +40,8 @@ def Multiprocessing(task):
 
 
 if __name__ == '__main__':
-        #Multiprocessing(ExecuteCrawler)
-        Multiprocessing(ExecuteScraper)
+        Multiprocessing(ExecuteCrawler)
+        #Multiprocessing(ExecuteScraper)
 
 
 
