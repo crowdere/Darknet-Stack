@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>{{ title }} - DarkWeb Analyst Portal</title>
+        <!-- Latest compiled and minified CSS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    </head>
+
+    <body  class="w3-theme-l4">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <div style="min-width:400px">
+
+            <div class="w3-bar w3-large w3-black w3-margin-bottom">
+                <a href="#" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-bars"></i></a>
+                <span class="w3-bar-item w3-padding-large">Scrapped Content</span>
+            </div>
+            <div class="w3-container w3-content">
+                <canvas id="myChart" width="400" height="130"></canvas>
+                <script>
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                            label: '# of Votes',
+                            data: [12, 19, 3, 5, 2, 3],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+                </script>
+            </div>
+
+
+            <hr>
+            <div class="w3-container w3-content">
+                <p class="w3-left"><b>Today in <span class="w3-text-deep-orange">{{user.hits.hits[0]._index}}</span></b></p> 
+                <a href="#" class="w3-bar-item w3-button w3-right w3-padding-large w3-black w3-hover-teal"><i class="fa fa-search"></i></a>
+                <input class="w3-input w3-animate-input w3-right w3-bar-item" type="text" style="width:30%;max-width: 550px;" placeholder="Search">
+            </div>
+
+            {%for i in range(0, 5)%} 
+                <div class="w3-container w3-content">
+                    <div class="w3-panel w3-white w3-card w3-display-container">
+                        <span class="w3-display-topright w3-padding">
+                            <!-- if analystviews == false color gray, else color red. Repeat for others -->
+                            <i class="fa fa-eye w3-text-gray w3-hover-text-deep-orange" aria-hidden="true"></i> 
+                            <i class="fa fa-commenting w3-text-gray w3-hover-text-deep-orange" aria-hidden="true"></i>
+                            <i class="fa fa-flag w3-text-gray w3-hover-text-deep-orange" aria-hidden="true"></i>
+                        </span>
+                        <span class="w3-display-bottomright w3-padding">
+                            22/06/2020
+                        </span>
+
+                    <p class="w3-text-teal"><b>{{user.hits.hits[i]._source.title}}</b></p>
+                    <i class="fa fa-user-secret" aria-hidden="true">{{user.hits.hits[i]._source.seller}}</i> | <i class="fa fa-id-card" aria-hidden="true">{{user.hits.hits[i]._source.category}}</i>
+                    <p><a href="{{user.hits.hits[0]._id}}" class="w3-text-teal">View Details</a></p>
+                    </div>
+                </div>
+            {%endfor%} 
+         </div>
+    </body>
+</html>

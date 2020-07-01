@@ -16,12 +16,12 @@ with open("onions.txt", "r") as onion:
 
 #Terminal Process for Crawler
 def ExecuteCrawler(url):
-    execute = str(' python3 /Users/laptop/Documents/capstone/Scraper/Modules/Crawler/crawl.py ' + url)
+    execute = str(' python3 /Users/laptop/Documents/capstone/Scrape/Modules/Crawler/crawl.py ' + url)
     os.system(execute)
 
 #Terminal Process for Scraper 
 def ExecuteScraper(url):
-    execute = str(' python3 /Users/laptop/Documents/capstone/Scraper/Modules/Scraper/Scrape.py ' + url)
+    execute = str(' python3 /Users/laptop/Documents/capstone/Scrape/Modules/Scraper/Scrape.py ' + url)
     print (execute)
     os.system(execute)
 
@@ -40,7 +40,7 @@ def Multiprocessing(task):
 
 
 if __name__ == '__main__':
-        Multiprocessing(ExecuteCrawler)
+        #Multiprocessing(ExecuteCrawler)
         Multiprocessing(ExecuteScraper)
 
 

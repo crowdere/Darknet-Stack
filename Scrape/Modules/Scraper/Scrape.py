@@ -60,7 +60,7 @@ def Scrape(url):
 
     #Saving output
     token = re.sub(r'[^\w]', '', url)
-    name = os.path.abspath("") + '/Output/' + token  + '.html'
+    name = os.path.abspath('../Data/Input/icarus' + token  + '.html')
     file = open(name,'a+')
     file.write(str(page))
     file.write("<span class='META_DATA'>" + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "<span>")
