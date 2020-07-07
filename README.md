@@ -17,5 +17,12 @@ Copy the hash of your password to the file `/Modules/Scrape.py` and replace with
 
 Navigate to `nano /etc/tor/torrc` and uncomment `ControlPort 9051`
 
+# Running the Crawler or Scraper
+Navigate into the project directory `cd Darknet-Stack Scrape`
+
+Add an onion link to the the file `nano onions.txt` 
+
+Run the driver code `python3 main.py`
+
 # Credit
 [Abhisek Singn](https://github.com/absingh31/Tor_Spider)
