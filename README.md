@@ -17,3 +17,5 @@ Copy the hash of your password to the file `/Modules/Scrape.py` and replace with
 
 Navigate to `nano /etc/tor/torrc` and uncomment `ControlPort 9051`
 
+# Credit
+[Abhisek Singn]: https://github.com/absingh31/Tor_Spider
