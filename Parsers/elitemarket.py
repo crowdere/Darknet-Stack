@@ -3,7 +3,6 @@
 # Version:      0.1 - Code Review Required before release
 # Date:         June 29 2020   
 # Author:       Edward Crowder
-
 from os import walk
 from DNDO import post
 import json
@@ -48,9 +47,12 @@ for f in files:
         p.productClass = rows[5].split(": ")[1]
         p.originCountry = rows[8].split(": ")[1]
         p.shippingDestinations = rows[9].split(": ")[1]
-        p.qty = rows[10].split(": ")[1]
+        p.quantity = rows[10].split(": ")[1]
         p.payment = rows[11].split(": ")[1]
-        p.analyst_dateCollected = soup.find('span', {'class' : 'META_DATA'}).text
+        # have to content since its outside DOM
+        x = str(contents)
+        x = x[-26:]
+        p.analyst_dateCollected = x[:-7]
 
         #Debug
         print("URL:\t\t" + p.url)
@@ -64,7 +66,7 @@ for f in files:
         print("proClas\t\t" + p.productClass)
         print("ocountry\t" + p.originCountry)
         print("shipping\t" + p.shippingDestinations)
-        print("qty\t\t" + p.qty)
+        print("qty\t\t" + p.quantity)
         print("payment\t\t" + p.payment)
         posts.append(p)
 

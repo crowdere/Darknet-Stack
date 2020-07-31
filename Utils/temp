@@ -1,0 +1,43 @@
+title                      <h4> how to find carable shops </h4>     first h4
+seller                      
+category                
+creationDate                
+url                 
+views                 
+purchases                 
+expire                 
+productClass                 
+originCountry                 
+shippingDestinations                 
+quantity                 
+price                 
+payment                 
+#None scrapped data
+self.analyst_hasViewed
+self.analyst_flagged 
+self.analyst_notes
+self.analyst_viewDate
+self.analyst_closedDate
+self.analyst_dateCollected = analyst_dateCollected
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+❯ python asean.py
+['\n\n\n\n\n\r\n                                            Price:\r\n                                        \n\n\r\n\r\n                                        832.85 USD\r\n                                    \n\n\n\n\r\n                                            Quantity:\r\n                                        \n\n99998.00\n\n\n\n\r\n                                        Type:\r\n                                    \n\nPhysical\n\n\n\n\r\n                                        Vendor:\r\n                                    \n\n\nmysteryland\n\n\n\n\n\r\n                                        Category:\r\n                                    \n\n\nStimulants > \r\n                                    Speed\n\n\n\n\n\r\n                                        Feedback:\r\n                                    \n\n\n\r\n                                        Total\r\n                                        0\n\n\r\n                                        Positive\r\n                                        0\n\n\r\n                                        Negative\r\n                                        0\n\n\n\n\n\n\r\n                                        Ships from:\r\n                                    \n\nGermany\n\n\n\n\r\n                                        Ships to:\r\n                                    \n\nWorldwide\n\n\n\n\r\n                                        Short description:\r\n                                    \n\n1 KG *** Amphetamine Paste*** Speed Paste 72% \n\n\n\n\r\n                                        Metatags:\r\n                                    \n\nspeed, pasta, drugs, cherry, molly, meth, amphetamine\n\n\n\n', '\r\n\r\n                                        832.85 USD\r\n                                    ', '99998.00', 'Physical', '\nmysteryland\n', '\nStimulants > \r\n                                    Speed\n', '\n\r\n                                        Total\r\n                                        0\n\n\r\n                                        Positive\r\n                                        0\n\n\r\n                                        Negative\r\n                                        0\n\n', 'Germany', 'Worldwide', '1 KG *** Amphetamine Paste*** Speed Paste 72% ', 'speed, pasta, drugs, cherry, molly, meth, amphetamine']
+Traceback (most recent call last):
+  File "asean.py", line 72, in <module>
+    print("\tURL:\t\t" + p.url)
+TypeError: can only concatenate str (not "NoneType") to str
+
+
